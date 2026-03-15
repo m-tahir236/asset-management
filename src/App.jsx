@@ -1,7 +1,8 @@
 import Counter from "./components/counter";
+import Products from "./components/Product";
 
 function App() {
-  return <Counter />;
+  return <Products />;
 }
 
 export default App;
