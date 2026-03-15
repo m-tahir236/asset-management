@@ -1,9 +1,9 @@
 import React from "react";
-import { useLocation, useParams, useNavigate } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { users } from "../constants/constants";
 
 const UserDetails = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const routeParams = useParams();
   const { id: userId } = routeParams;
 

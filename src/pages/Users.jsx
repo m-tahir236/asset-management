@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { users } from "../constants/constants";
 
 const Users = () => {
@@ -7,7 +7,7 @@ const Users = () => {
     <>
       {users.map((user, index) => (
         <>
-          <Link to={`/user/${user.id}`}>
+          <Link to={`${user.id}`}>
             <div
               key={index}
               style={{ display: "flex", gap: "16px", padding: "12px" }}
@@ -20,6 +20,7 @@ const Users = () => {
           <hr />
         </>
       ))}
+      <Outlet />
     </>
   );
 };
