@@ -26,6 +26,9 @@ const Navbar = () => {
         <NavLink to={"/contact"} style={navLinkStyles}>
           Contact us
         </NavLink>
+        <NavLink to={"/users"} style={navLinkStyles}>
+          User
+        </NavLink>
       </div>
     </>
   );
