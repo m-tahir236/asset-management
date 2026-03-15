@@ -14,6 +14,7 @@ const Navbar = () => {
           display: "flex",
           gap: "12px",
           padding: "8px",
+          marginBottom: "12px", // TODO - Remove
           backgroundColor: "white",
         }}
       >
