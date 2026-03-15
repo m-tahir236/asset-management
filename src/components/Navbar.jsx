@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -6,11 +6,15 @@ const Navbar = () => {
     backgroundColor: isActive ? "black" : "transparent",
     color: isActive ? "white" : "black",
     padding: "4px 8px",
-    borderRadius: "4px"
+    borderRadius: "4px",
   });
 
   const navigate = useNavigate();
   const [isLoggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    navigate(isLoggedIn ? "/users" : "/");
+  }, [isLoggedIn, navigate]);
 
   const login = () => {
     setLoggedIn(true);
@@ -42,9 +46,14 @@ const Navbar = () => {
               justifyContent: "space-between",
             }}
           >
-            <NavLink to={"/users"} style={navLinkStyles}>
-              Users
-            </NavLink>
+            <div style={{ display: "flex", gap: "12px" }}>
+              <NavLink to={"/assets"} prefetch="intent" style={navLinkStyles}>
+                Assets
+              </NavLink>
+              <NavLink to={"/users"} style={navLinkStyles}>
+                Users
+              </NavLink>
+            </div>
             <button onClick={logout}>Logout</button>
           </div>
         )}
@@ -57,7 +66,7 @@ const Navbar = () => {
               justifyContent: "space-between",
             }}
           >
-            <div style={{display: "flex", gap: "12px"}}>
+            <div style={{ display: "flex", gap: "12px" }}>
               <NavLink to={"/"} style={navLinkStyles}>
                 Home
               </NavLink>
